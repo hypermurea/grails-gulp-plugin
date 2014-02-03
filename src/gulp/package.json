@@ -1,0 +1,13 @@
+{
+  "name": "grails-gulp-sample",
+  "description": "Grails gulp sample project",
+  "author": "your name <yourname@todo>",
+  "main": "sample.js",
+  "dependencies": {},
+  "engine": "node 0.10.18",
+  "devDependencies": {
+    "gulp": "~3.5.0",
+	"gulp-util": "~2.2.13",
+	"gulp-jasmine": "~0.1.2"
+  }
+}
