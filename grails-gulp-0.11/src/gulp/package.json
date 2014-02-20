@@ -1,0 +1,8 @@
+{
+  "name": "todo",
+  "description": "Grails gulp project",
+  "author": "your name <yourname@todo>",
+  "dependencies": {
+  },
+  "engine": "node 0.10.18"
+}

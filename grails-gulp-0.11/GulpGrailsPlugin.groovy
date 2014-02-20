@@ -1,6 +1,6 @@
 class GulpGrailsPlugin {
     // the plugin version
-    def version = "0.1.2"
+    def version = "0.11"
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "2.2 > *"
     // resources that are excluded from plugin packaging
@@ -8,12 +8,11 @@ class GulpGrailsPlugin {
         "grails-app/views/error.gsp"
     ]
 
-    def title = "Grails Gulp Plugin" // Headline display name of the plugin
+    def title = "Gulp Plugin" // Headline display name of the plugin
     def author = "Jaakko Santala"
     def authorEmail = "jaakko@hypermurea.com"
     def description = '''\
-	Use gulp build scripts as part of your grails project. You can call gulp tasks from grails commmand-line and link tasks to grails project
-	compile and test phases.
+	Use gulp builds as part of your grails project
 	'''
 
     // URL to the plugin's documentation
@@ -27,14 +26,13 @@ class GulpGrailsPlugin {
     // Details of company behind the plugin (if there is one)
 	def organization = [ name: "Hypermurea", url: "http://hypermurea.com/" ]
 
+	// TODO link to github
     // Location of the plugin's issue tracker.
-	def issueManagement = [ system: "GITHUB", url: "https://github.com/hypermurea/grails-gulp-plugin/issues" ]
+//    def issueManagement = [ system: "JIRA", url: "http://jira.grails.org/browse/GPMYPLUGIN" ]
 
 	// TODO link to github
     // Online location of the plugin's browseable source code.
-	def scm = [ url: "https://github.com/hypermurea/grails-gulp-plugin" ]
-
-	def scopes = [ excludes: 'war' ] 
+//    def scm = [ url: "http://svn.codehaus.org/grails-plugins/" ]
 
     def doWithWebDescriptor = { xml ->
         // TODO Implement additions to web.xml (optional), this event occurs before

@@ -1,0 +1,18 @@
+<plugin name='gulp' version='0.11' grailsVersion='2.2 &gt; *'>
+  <author>Jaakko Santala</author>
+  <authorEmail>jaakko@hypermurea.com</authorEmail>
+  <title>Gulp Plugin</title>
+  <description>	Use gulp builds as part of your grails project
+	</description>
+  <documentation>http://github.com/hypermurea/gulp-grails-plugin</documentation>
+  <type>GulpGrailsPlugin</type>
+  <resources />
+  <repositories>
+    <repository name='grailsCentral' url='http://grails.org/plugins' />
+    <repository name='mavenCentral' url='http://repo1.maven.org/maven2/' />
+  </repositories>
+  <dependencies />
+  <plugins />
+  <runtimePluginRequirements />
+  <behavior />
+</plugin>

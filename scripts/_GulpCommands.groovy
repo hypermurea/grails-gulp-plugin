@@ -1,3 +1,5 @@
+includeTargets << grailsScript('_GrailsInit')
+
 includeTool << gant.tools.Execute
 
 getConfig = {
@@ -21,10 +23,12 @@ runTestTasks = {
 
 runCompileTasks = {
 	printMessage 'Running gulp compile tasks'
+	
+	pluginShell('npm update') 
 	def compileTasks = getConfig().grails.plugin.gulp.task.compile
-	pluginShell('npm update')
 	pluginShell('gulp ' + compileTasks)
+	
 	event('StatusFinal', ['Finished gulp compile tasks: ' + compileTasks])
 }
 
-printMessage = { String message -> event('StatusUpdate', [message + "\n"]) }
+printMessage = { String message -> event('StatusUpdate', [message + "\n" ]) }

@@ -9,14 +9,26 @@
 //    ant.mkdir(dir:"${basedir}/grails-app/jobs")
 //
 
-includeTargets << grailsScript('_GrailsInit')
 includeTargets << new File(gulpPluginDir, 'scripts/_GulpCommands.groovy')
 
-ant.mkdir(src:"${basedir}/src/gulp")
-ant.mkdir(src:"${basedir}/src/gulp/spec")
+printMessage "installing Gulp plugin.."
+
+printMessage "creating src/gulp"
+ant.mkdir(dir:"${basedir}/src/gulp")
+printMessage "creating src/gulp/spec"
+ant.mkdir(dir:"${basedir}/src/gulp/spec")
+printMessage "copying gulpfile.js"
 ant.copy(file: "${pluginBasedir}/src/gulp/gulpfile.js", todir: "${basedir}/src/gulp")
+printMessage "copying package.json"
 ant.copy(file: "${pluginBasedir}/src/gulp/package.json", todir: "${basedir}/src/gulp")
+printMessage "copying README.md"
+ant.copy(file: "${pluginBasedir}/src/gulp/README.md", todir: "${basedir}/src/gulp/spec")
+printMessage "copying test.js"
 ant.copy(file: "${pluginBasedir}/src/gulp/spec/test.js", todir: "${basedir}/src/gulp/spec")
+printMessage "copying GulpConfig.groovy"
+ant.copy(file: "${pluginBasedir}/grails-app/conf/GulpConfig.groovy", todir: "${basedir}/grails-app/conf")
+
+printMessage "running npm install.."
 
 if(!pluginShell('npm install')) {
 	event('StatusError',  'cannot execute npm: check that you have node.js, npm and gulp globally installed and on your PATH.')
